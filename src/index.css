@@ -1,19 +1,148 @@
 @import 'tailwindcss';
 
+/* Self-hosted Bangla fonts (public/fonts) */
+@font-face {
+  font-family: 'Siyam Rupali';
+  src: url('/fonts/siyam-rupali.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SolaimanLipi';
+  src: url('/fonts/solaiman-lipi.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SolaimanLipi';
+  src: url('/fonts/solaiman-lipi-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SolaimanLipi Thin';
+  src: url('/fonts/solaiman-lipi-thin.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kalpurush';
+  src: url('/fonts/kalpurush.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nikosh';
+  src: url('/fonts/nikosh.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mukti';
+  src: url('/fonts/mukti.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mukti';
+  src: url('/fonts/mukti-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lohit Bengali';
+  src: url('/fonts/lohit-bengali.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ekushey Lohit';
+  src: url('/fonts/ekushey-lohit.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Apona Lohit';
+  src: url('/fonts/apona-lohit.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Adorsho Lipi';
+  src: url('/fonts/adorsho-lipi.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Charu Chandan';
+  src: url('/fonts/charu-chandan.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Charu Chandan Hard Stroke';
+  src: url('/fonts/charu-chandan-hard-stroke.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Vrinda';
+  src: url('/fonts/vrinda.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bensen';
+  src: url('/fonts/bensen.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bangla (Old)';
+  src: url('/fonts/bangla.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bensen Handwriting';
+  src: url('/fonts/bensen-handwriting.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Charukola Ultra Light';
+  src: url('/fonts/charukola-ultra-light.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tiro Bangla Italic';
+  src: url('/fonts/tiro-bangla-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mukti Italic';
+  src: url('/fonts/mukti-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: 'Kohinoor Bangla', system-ui, sans-serif;
 }
 
-/* Ticket paper: 58mm thermal roll */
+/* Ticket paper: 54mm x 65mm */
 @layer components {
   .ticket {
-    @apply mx-auto w-[58mm] bg-white px-[3mm] py-[4mm] text-black;
+    @apply mx-auto h-[65mm] w-[54mm] bg-white px-[3mm] py-[4mm] text-black;
   }
 }
 
 @media print {
   @page {
-    size: 58mm 100mm;
+    size: 54mm 65mm;
     margin: 0;
   }
   body {

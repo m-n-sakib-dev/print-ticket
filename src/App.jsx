@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react'
-import { countermen, fares, letters, routes, stops } from './ticketConfig'
+import { countermen, fares, fonts, letters, routes, stops } from './ticketConfig'
 import { formatDate, formatMeridiem, formatTime, toBn, toInputValue } from './bn'
 
 function Field({ label, children }) {
@@ -21,6 +21,7 @@ export default function App() {
     stopNo: 1,
     from: stops[0],
     letter: 'U',
+    font: fonts[0],
     to: stops[1] ?? stops[0],
     ticketNo: 1,
     counterman: 0,
@@ -127,6 +128,14 @@ export default function App() {
             </select>
           </Field>
 
+          <Field label="ফন্ট">
+            <select className={inputClass} value={form.font} onChange={set('font')}>
+              {fonts.map((f) => (
+                <option key={f}>{f}</option>
+              ))}
+            </select>
+          </Field>
+
           <button
             type="button"
             onClick={() => window.print()}
@@ -138,6 +147,7 @@ export default function App() {
 
         <div
           className="ticket shrink-0 shadow print:shadow-none"
+          style={{ fontFamily: `"${form.font}", system-ui, sans-serif` }}
         >
           <div className="origin-center scale-x-[1.03] scale-y-[0.9] text-center text-[15px] font-normal leading-tight">ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
           <div className="text-center text-[14px] font-normal leading-none">Powered by CIC Group</div>
@@ -164,12 +174,12 @@ export default function App() {
                 ))}</span>
             <span className="ml-2 inline-block  scale-x-90 scale-y-[1.3] text-[13px] font-medium">{valid ? formatMeridiem(when) : ''}</span>
           </div>
-          <div className="text-center text-[14px] scale-x-[1.03] font-light  leading-tight">কাউন্টারম্যানঃ {man.name}</div>
-          <div className="text-center text-[14px] scale-x-[1.04] scale-y-[0.95] font-light  leading-tight">মোবাইলঃ <span className="text-[13px]">{man.mobile}</span></div>
-          <div className="text-center text-[12px] font-light leading-snug text-black/80">অভিযোগ নাম্বারঃ 01617550101</div>
+          <div className="text-center text-[14px] scale-x-[1.04] scale-y-[0.95] font-light  leading-tight">কাউন্টারম্যানঃ {man.name}</div>
+          <div className="text-center text-[14px] scale-x-[1.06] scale-y-[0.94] font-light  leading-tight">মোবাইলঃ <span className="text-[13px]">{man.mobile}</span></div>
+          <div className="text-center text-[12px] scale-x-[1.04] scale-y-[0.95] font-light leading-snug text-black/80">অভিযোগ নাম্বারঃ 01617550101</div>
           <div className="text-center text-[12px] font-light leading-snug text-black/80">01626077556</div>
-          <div className="text-left text-[11px] scale-x-[1.04] font-light leading-snug ml-2 [word-spacing:2px]">* টিকিটটি সংরক্ষনে রাখুন, চেক হবে।</div>
-          <div className="text-left text-[11px] scale-x-[1.03] font-light leading-snug ml-2">* টিকেটের অতিরিক্ত ভ্রমণে জরিমানা হবে।</div>
+          <div className="text-left text-[11px] scale-x-[1.04] scale-y-[0.95]  font-light leading-snug ml-2 [word-spacing:2px]">* টিকিটটি সংরক্ষনে রাখুন, চেক হবে।</div>
+          <div className="text-left text-[11px] scale-x-[1.04] scale-y-[0.95] font-light leading-snug ml-2">* টিকেটের অতিরিক্ত ভ্রমণে জরিমানা হবে।</div>
           <div className="mt-1 text-center text-[12px] font-medium leading-snug">সহযোগিতায় যাত্রী সার্ভিসেস লিঃ</div>
         </div>
       </div>
