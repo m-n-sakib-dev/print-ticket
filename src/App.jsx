@@ -149,7 +149,8 @@ export default function App() {
           className="ticket shrink-0 shadow print:shadow-none"
           style={{ fontFamily: `"${form.font}", system-ui, sans-serif` }}
         >
-          <div className="origin-center scale-x-[1.03] scale-y-[0.9] text-center text-[15px] font-normal leading-tight">ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
+          <div className="[zoom:0.83]">
+          <div className="origin-center scale-x-[1.03] scale-y-[0.9] text-center text-[16px] font-normal leading-tight">ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
           <div className="text-center text-[14px] font-normal leading-none">Powered by CIC Group</div>
           <div className="text-center text-[16px] scale-x-[1.15] font-normal ">{form.route}</div>
           <div className="my-0 text-center text-[22px] font-normal leading-none">ভাড়াঃ {toBn(form.fare)}</div>
@@ -174,13 +175,14 @@ export default function App() {
                 ))}</span>
             <span className="ml-2 inline-block  scale-x-90 scale-y-[1.3] text-[13px] font-medium">{valid ? formatMeridiem(when) : ''}</span>
           </div>
-          <div className="text-center text-[14px] scale-x-[1.04] scale-y-[0.95] font-light  leading-tight">কাউন্টারম্যানঃ {man.name}</div>
-          <div className="text-center text-[14px] scale-x-[1.06] scale-y-[0.94] font-light  leading-tight">মোবাইলঃ <span className="text-[13px]">{man.mobile}</span></div>
-          <div className="text-center text-[12px] scale-x-[1.04] scale-y-[0.95] font-light leading-snug text-black/80">অভিযোগ নাম্বারঃ 01617550101</div>
-          <div className="text-center text-[12px] font-light leading-snug text-black/80">01626077556</div>
-          <div className="text-left text-[11px] scale-x-[1.04] scale-y-[0.95]  font-light leading-snug ml-2 [word-spacing:2px]">* টিকিটটি সংরক্ষনে রাখুন, চেক হবে।</div>
-          <div className="text-left text-[11px] scale-x-[1.04] scale-y-[0.95] font-light leading-snug ml-2">* টিকেটের অতিরিক্ত ভ্রমণে জরিমানা হবে।</div>
+          <div className="text-center text-[14px] scale-x-[1.04] scale-y-[0.95] font-['Noto_Sans_Bengali'] font-extralight  leading-tight">কাউন্টারম্যানঃ {man.name}</div>
+          <div className="text-center text-[14px] scale-x-[1.06] scale-y-[0.94] font-['Noto_Sans_Bengali'] font-extralight  leading-tight">মোবাইলঃ <span className="text-[13px]">{man.mobile}</span></div>
+          <div className="text-center text-[12px] scale-x-[1.04] scale-y-[0.95] font-['Noto_Sans_Bengali'] font-extralight leading-snug text-black/80">অভিযোগ নাম্বারঃ 01617550101</div>
+          <div className="text-center text-[12px] font-['Noto_Sans_Bengali'] font-extralight leading-snug text-black/80">01626077556</div>
+          <div className="text-left text-[11px] scale-x-[1.04] scale-y-[0.95]  font-['Noto_Sans_Bengali'] font-extralight leading-snug ml-2 [word-spacing:4px]">* টিকিটটি সংরক্ষনে রাখুন, চেক হবে।</div>
+          <div className="text-left text-[11px] scale-x-[1.04] scale-y-[0.95] font-['Noto_Sans_Bengali'] font-extralight leading-snug ml-2 [word-spacing:4px]">* টিকেটের অতিরিক্ত ভ্রমণে জরিমানা হবে।</div>
           <div className="mt-1 text-center text-[12px] font-medium leading-snug">সহযোগিতায় যাত্রী সার্ভিসেস লিঃ</div>
+          </div>
         </div>
       </div>
     </main>
