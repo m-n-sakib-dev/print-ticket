@@ -1,34 +1,25 @@
-:root {
-  --text: #111;
-  --bg: #fff;
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Kohinoor Bangla', system-ui, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.page {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 32px 16px;
-}
-
-.page p {
-  margin: 0 0 12px;
+/* Ticket paper: 58mm thermal roll */
+@layer components {
+  .ticket {
+    @apply mx-auto w-[58mm] bg-white px-[3mm] py-[4mm] text-black;
+  }
 }
 
 @media print {
-  .page {
-    max-width: none;
-    padding: 0;
+  @page {
+    size: 58mm 100mm;
+    margin: 0;
+  }
+  body {
+    background: #fff;
+  }
+  .ticket {
+    @apply w-full;
   }
 }
