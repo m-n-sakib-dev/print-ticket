@@ -163,8 +163,8 @@ export default function App() {
             <span className="inline-block origin-bottom-left font-light scale-x-[0.8]">{form.letter}-</span>
             <span className="font-font-normal">{form.to}</span>
           </div>
-          <div className="text-center text-[14px] scale-x-[1.04] scale-y-[0.95] font-medium leading-snug">টিকেট নংঃ {toBn(form.ticketNo)}</div>
-          <div className="text-center text-[13px] scale-x-[1.04]  font-medium leading-snug">তাংঃ {valid ? formatDate(when) : ''}</div>
+          <div className="text-center text-[15px] scale-x-[1.04] scale-y-[0.95] font-medium leading-none">টিকেট নংঃ {toBn(form.ticketNo)}</div>
+          <div className="text-center text-[14px] scale-x-[1.04]  font-medium leading-none">তাংঃ {valid ? formatDate(when) : ''}</div>
           <div className="my-1 text-center text-[18px] scale-x-[1.04] scale-y-[0.90] font-medium leading-none">
             <span style={{ fontFamily: '"Siyam Rupali"' }}>সময়ঃ</span> <span className="inline-block origin-left text-[17px] scale-x-[1.1] scale-y-[1.1] font-medium">{valid &&
                 formatTime(when).map((part, i) => (
