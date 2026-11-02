@@ -172,7 +172,7 @@
 /* Ticket paper: 54mm x 65mm */
 @layer components {
   .ticket {
-    @apply mx-auto h-[65mm] w-[54mm] bg-white px-[3mm] py-[2mm] text-black;
+    @apply mx-auto h-[65mm] w-[50mm] bg-white px-[1mm] py-[2mm] text-black;
   }
 }
 

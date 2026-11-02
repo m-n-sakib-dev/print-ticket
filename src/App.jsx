@@ -12,7 +12,7 @@ function Field({ label, children }) {
 }
 
 const inputClass =
-  'w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-base focus:border-neutral-900 focus:outline-none'
+  'w-full rounded-md border border-neutral-300 bg-white px-1 py-2 text-base focus:border-neutral-900 focus:outline-none'
 
 export default function App() {
   const [form, setForm] = useState(() => ({
@@ -165,17 +165,17 @@ export default function App() {
           </div>
           <div className="text-center text-[14px] scale-x-[1.04] scale-y-[0.95] font-medium leading-snug">টিকেট নংঃ {toBn(form.ticketNo)}</div>
           <div className="text-center text-[13px] scale-x-[1.04]  font-medium leading-snug">তাংঃ {valid ? formatDate(when) : ''}</div>
-          <div className="my-1 text-center text-[18px] scale-x-[1.04] scale-y-[0.98] font-medium leading-none">
-            <span style={{ fontFamily: '"Siyam Rupali"' }}>সময়ঃ</span> <span className="inline-block origin-left text-[17px] scale-x-[1.1] scale-y-[1.2] font-medium">{valid &&
+          <div className="my-1 text-center text-[18px] scale-x-[1.04] scale-y-[0.90] font-medium leading-none">
+            <span style={{ fontFamily: '"Siyam Rupali"' }}>সময়ঃ</span> <span className="inline-block origin-left text-[17px] scale-x-[1.1] scale-y-[1.1] font-medium">{valid &&
                 formatTime(when).map((part, i) => (
                   <Fragment key={i}>
                     {i > 0 && <span className="mx-[2px]">:</span>}
                     {part}
                   </Fragment>
                 ))}</span>
-            <span className="ml-2 inline-block  scale-x-90 scale-y-[1.3] text-[13px] font-medium">{valid ? formatMeridiem(when) : ''}</span>
+            <span className="ml-3 inline-block  scale-x-90 scale-y-[1.3] text-[13px] font-medium">{valid ? formatMeridiem(when) : ''}</span>
           </div>
-          <div className="text-center text-[14px] scale-x-[1.04] scale-y-[0.95] font-['Noto_Sans_Bengali'] font-extralight  leading-tight">কাউন্টারম্যানঃ {man.name}</div>
+          <div className="text-center text-[14px] scale-x-[1.05] scale-y-[0.95] font-['Noto_Sans_Bengali'] font-extralight  leading-tight [word-spacing:4px]">কাউন্টারম্যানঃ {man.name}</div>
           <div className="text-center text-[14px] scale-x-[1.06] scale-y-[0.94] font-['Noto_Sans_Bengali'] font-extralight  leading-tight">মোবাইলঃ <span className="text-[13px]">{man.mobile}</span></div>
           <div className="text-center text-[12px] scale-x-[1.04] scale-y-[0.95] font-['Noto_Sans_Bengali'] font-extralight leading-snug text-black/80">অভিযোগ নাম্বারঃ 01617550101</div>
           <div className="text-center text-[12px] font-['Noto_Sans_Bengali'] font-extralight leading-snug text-black/80">01626077556</div>
