@@ -2,6 +2,42 @@
 
 /* Self-hosted Bangla fonts (public/fonts) */
 @font-face {
+  font-family: 'Kohinoor Bangla';
+  src: url('/fonts/kohinoor-bangla.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kohinoor Bangla';
+  src: url('/fonts/kohinoor-bangla-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bangla MN';
+  src: url('/fonts/bangla-mn.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bangla MN';
+  src: url('/fonts/bangla-mn-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bangla Sangam MN';
+  src: url('/fonts/bangla-sangam-mn.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bangla Sangam MN';
+  src: url('/fonts/bangla-sangam-mn-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
   font-family: 'Siyam Rupali';
   src: url('/fonts/siyam-rupali.ttf') format('truetype');
   font-weight: 400;

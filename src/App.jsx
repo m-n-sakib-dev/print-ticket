@@ -147,7 +147,7 @@ export default function App() {
 
         <div
           className="ticket shrink-0 shadow print:shadow-none"
-          style={{ fontFamily: `"${form.font}", system-ui, sans-serif` }}
+          style={{ fontFamily: `"${form.font}", "Hind Siliguri", "Noto Sans Bengali", sans-serif` }}
         >
           <div className="[zoom:0.83]">
           <div className="origin-center scale-x-[1.03] scale-y-[0.9] text-center text-[16px] font-normal leading-tight">ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
