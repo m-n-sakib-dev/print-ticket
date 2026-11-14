@@ -24,6 +24,23 @@ const applyStop = (form, from) => {
   return { ...next, letter: routeLetters[next.route] ?? next.letter }
 }
 
+// Last use kora time localStorage-e thake
+const TIME_KEY = 'ticket:dateTime'
+const loadTime = () => {
+  try {
+    return localStorage.getItem(TIME_KEY)
+  } catch {
+    return null
+  }
+}
+const saveTime = (value) => {
+  try {
+    localStorage.setItem(TIME_KEY, value)
+  } catch {
+    // localStorage nei, ignore
+  }
+}
+
 export default function App() {
   const [form, setForm] = useState(() =>
     applyStop(
@@ -36,13 +53,18 @@ export default function App() {
         to: stops[1] ?? stops[0],
         ticketNo: 1,
         counterman: 0,
-        dateTime: toInputValue(new Date()),
+        dateTime: loadTime() || toInputValue(new Date()),
       },
       stops[0],
     ),
   )
 
   const set = (key) => (e) => setForm({ ...form, [key]: e.target.value })
+
+  const setDateTime = (value) => {
+    saveTime(value)
+    setForm({ ...form, dateTime: value })
+  }
 
   const openPrintPage = () => window.open(`${location.pathname}?${toParams(form)}`, '_blank')
 
@@ -135,13 +157,22 @@ export default function App() {
           </Field>
 
           <Field label="তারিখ ও সময়">
-            <input
-              className={inputClass}
-              type="datetime-local"
-              step="1"
-              value={form.dateTime}
-              onChange={set('dateTime')}
-            />
+            <div className="flex gap-2">
+              <input
+                className={inputClass}
+                type="datetime-local"
+                step="1"
+                value={form.dateTime}
+                onChange={(e) => setDateTime(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={() => setDateTime(toInputValue(new Date()))}
+                className="shrink-0 rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm font-medium hover:bg-neutral-100"
+              >
+                এখন
+              </button>
+            </div>
           </Field>
 
           <Field label="কাউন্টারম্যান">
