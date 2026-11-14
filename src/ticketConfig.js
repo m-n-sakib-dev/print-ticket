@@ -7,12 +7,12 @@ export const routeLetters = { 'পুলিশ / ডাউন': 'D', 'পুল�
 export const fares = [ '১১০']
 
 // "from" ar "to" dropdown duto-i ei list theke ashe
-export const stops = ['গোলাপবাগ', 'কুরিল', 'যমুনা']
+export const stops = ['গোলাপবাগ', 'কুড়িল', 'যমুনা']
 
 // "কোথা থেকে" stop select korle ei value gulo auto boshe, pore form-e bodlano jay.
 // Ekhane na thakle ager value-i thake. counterman = countermen-er naam.
 export const stopDefaults = {
-  'গোলাপবাগ': { stopNo: 22, route: 'পুলিশ / ডাউন', fare: '১১০', counterman: 'বাদশাহ', to: 'কুরিল', ticketNo: 35 },
+  'গোলাপবাগ': { stopNo: 22, route: 'পুলিশ / ডাউন', fare: '১১০', counterman: 'বাদশাহ', to: 'কুড়িল', ticketNo: 35 },
   'যমুনা': { stopNo: 8, route: 'পুলিশ / আপ', counterman: 'শাহ আলম', to: 'গোলাপবাগ', ticketNo: 323 },
 }
 
