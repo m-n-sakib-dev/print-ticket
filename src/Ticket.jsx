@@ -12,8 +12,8 @@ export default function Ticket({ form }) {
       className="ticket shrink-0 shadow print:shadow-none"
       style={{ fontFamily: `"${form.font}", "Hind Siliguri", "Noto Sans Bengali", sans-serif` }}
     >
-      <div className="[zoom:0.9] border-black border-[1px] ">
-      <div className="origin-center scale-x-[1.01] scale-y-[0.9] text-left text-[16px] font-normal leading-tight [word-spacing:4px]">ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
+      <div className="[zoom:0.9] ">
+      <div className="origin-center scale-x-[1.01] scale-y-[0.9] text-left text-[16px] ml-1 font-normal leading-tight [word-spacing:4px]">ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
       <div className="text-center text-[14px] scale-x-[0.9] font-normal leading-none [word-spacing:4px]" style={{ fontFamily: '"SolaimanLipi"' }}>Powered by C<span style={{ fontFamily: '"Noto Sans Bengali"' }}>I</span>C <span style={{ fontFamily: '"Noto Sans Bengali"' }}>G</span>roup</div>
       <div className="text-center text-[16px] scale-x-[1.15] scale-y-[1.05] font-normal ">{form.route}</div>
       <div className="my-0 text-center text-[22px] font-normal leading-none">ভাড়াঃ <span className="ml-1" style={{ fontFamily: '"Charukola Ultra Light"', WebkitTextStroke: '1px currentColor', letterSpacing: '0.13em' }}>{toBn(form.fare)}</span></div>
@@ -27,9 +27,10 @@ export default function Ticket({ form }) {
         <span className="font-font-normal">{form.to}</span>
       </div>
       <div className="text-center text-[15px] scale-x-[1.04] scale-y-[0.95] font-medium leading-none">টিকেট নংঃ {toBn(form.ticketNo)}</div>
-      <div className="text-center text-[14px] scale-x-[1.04]  font-medium leading-none">তাংঃ {valid ? formatDate(when) : ''}</div>
-      <div className="my-1 text-center text-[18px] scale-x-[1.04] scale-y-[0.90] font-medium leading-none">
-        <span style={{ fontFamily: '"Siyam Rupali"' }}>সময়ঃ</span> <span className="inline-block origin-left text-[17px] scale-x-[1.1] scale-y-[1.1] font-medium">{valid &&
+      <div className="text-center text-[14px] scale-x-[1.04]  font-medium leading-normal">তাংঃ {valid ? formatDate(when) : ''}</div>
+      <div className="my-1 text-center text-[18px] scale-x-[1.04] scale-y-[0.90] font-medium leading-none -mt-1">
+        <span style={{ fontFamily: '"Siyam Rupali"' }}>সময়ঃ</span> 
+        <span className="inline-block origin-left text-[18px] scale-x-[1.1] ml-1 font-medium">{valid &&
             formatTime(when).map((part, i) => (
               <Fragment key={i}>
                 {i > 0 && <span className="mx-[2px]">:</span>}
