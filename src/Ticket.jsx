@@ -21,10 +21,10 @@ export default function Ticket({ form }) {
         <span className="inline-block origin-left font-normal scale-x-[1.08]">
           (<span className="mx-[2px] [zoom:0.9]" style={{ fontFamily: '"Hind Siliguri"' }}>{toBn(form.stopNo)}</span>)
         </span>
-        <span className="inline-block origin-left scale-x-[1.1] scale-y-[0.9] font-normal ml-1 mr-2" style={{ WebkitTextStroke: '0.4px currentColor' }}>{form.from}</span>
+        <span className="inline-block origin-left scale-x-[1.1] scale-y-[0.9] font-normal ml-1 mr-2" style={{ WebkitTextStroke: '0.4px currentColor' ,fontFamily: '"Siyam Rupali"'}}>{form.from}</span>
         <span className="font-normal">/</span>
         <span className="inline-block origin-bottom-left font-light scale-x-[0.8]">{form.letter}-</span>
-        <span className="inline-block origin-left scale-x-[1.1] scale-y-[0.9] font-font-normal" style={{ WebkitTextStroke: '0.4px currentColor' }}>{form.to}</span>
+        <span className="inline-block origin-left scale-x-[1.1] scale-y-[0.9] font-font-normal" style={{ WebkitTextStroke: '0.4px currentColor' ,fontFamily: '"Siyam Rupali"'}}>{form.to}</span>
       </div>
       <div className="text-center text-[16px] scale-x-[1.04] [zoom:0.9] scale-y-[0.95] font-medium translate-y-[2px] leading-none [word-spacing:4px]" style={{ WebkitTextStroke: '0.3px currentColor', fontFamily: '"Siyam Rupali"'}}>টিকেট নংঃ {toBn(form.ticketNo)}</div>
       <div className="text-center text-[14px] scale-x-[1.1]  font-medium leading-normal translate-y-[2px] [word-spacing:4px]" style={{ WebkitTextStroke: '0.4px currentColor' }}>তাংঃ {valid ? formatDate(when) : ''}</div>
@@ -47,7 +47,7 @@ export default function Ticket({ form }) {
         <div>* টিকিটটি সংরক্ষনে রাখুন, চেক হবে।</div>
         <div>* টিকেটের অতিরিক্ত ভ্রমণে জরিমানা হবে।</div>
       </div>
-      <div className="mt-1 text-center text-[13px] scale-y-[0.9] translate-y-[-4px] font-medium leading-none [word-spacing:3px]">সহযোগিতায় যাত্রী সার্ভিসেস লিঃ</div>
+      <div className="mt-1 text-center text-[13px] scale-y-[0.9] translate-y-[-4px]  leading-none [word-spacing:3px]" style={{ WebkitTextStroke: '0.4px currentColor' }}>সহযোগিতায় যাত্রী সার্ভিসেস লিঃ</div>
       </div>
     </div>
   )
