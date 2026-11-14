@@ -13,7 +13,7 @@ export default function Ticket({ form }) {
       style={{ fontFamily: `"${form.font}", "Hind Siliguri", "Noto Sans Bengali", sans-serif` }}
     >
       <div className="[zoom:0.9] ">
-      <div className="origin-center scale-x-[1.01] scale-y-[0.9] text-left text-[16px] ml-1 font-normal leading-tight [word-spacing:4px]">ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
+      <div className="origin-left scale-x-[1.01] scale-y-[0.9] text-left text-[16px] font-normal leading-tight [word-spacing:4px]">ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
       <div className="text-center text-[14px] scale-x-[0.9] font-normal leading-none [word-spacing:4px]" style={{ fontFamily: '"SolaimanLipi"' }}>Powered by C<span style={{ fontFamily: '"Noto Sans Bengali"' }}>I</span>C <span style={{ fontFamily: '"Noto Sans Bengali"' }}>G</span>roup</div>
       <div className="text-center text-[16px] scale-x-[1.15] scale-y-[1.05] font-normal ">{form.route}</div>
       <div className="my-0 text-center text-[22px] font-normal leading-none">ভাড়াঃ <span className="ml-1" style={{ fontFamily: '"Charukola Ultra Light"', WebkitTextStroke: '1px currentColor', letterSpacing: '0.13em' }}>{toBn(form.fare)}</span></div>
@@ -43,7 +43,7 @@ export default function Ticket({ form }) {
       <div className="text-center text-[14px] scale-x-[1.06] scale-y-[0.94] font-['Noto_Sans_Bengali'] font-extralight  leading-tight">মোবাইলঃ <span className="text-[13px]">{man.mobile}</span></div>
       <div className="text-center text-[12px] scale-x-[1.04] scale-y-[0.95] font-['Noto_Sans_Bengali'] font-extralight leading-snug text-black/80">অভিযোগ নাম্বারঃ 01617550101</div>
       <div className="text-center text-[12px] font-['Noto_Sans_Bengali'] font-extralight leading-snug text-black/80">01626077556</div>
-      <div className="text-left text-[12px] scale-x-[1.04] scale-y-[0.95] font-['Noto_Sans_Bengali'] font-extralight leading-snug ml-2 [word-spacing:4px]">
+      <div className="origin-left text-left text-[12px] scale-x-[1.01] scale-y-[0.95] font-['Noto_Sans_Bengali'] font-extralight leading-snug [word-spacing:4px]">
         <div>* টিকিটটি সংরক্ষনে রাখুন, চেক হবে।</div>
         <div>* টিকেটের অতিরিক্ত ভ্রমণে জরিমানা হবে।</div>
       </div>

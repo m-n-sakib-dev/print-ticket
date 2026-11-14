@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { countermen, fares, fonts, letters, routes, stops } from './ticketConfig'
+import { countermen, fares, fonts, letters, routes, stopDefaults, stops } from './ticketConfig'
 import { toInputValue } from './bn'
 import { toParams } from './formParams'
 import Ticket from './Ticket'
@@ -16,19 +16,30 @@ function Field({ label, children }) {
 const inputClass =
   'w-full rounded-md border border-neutral-300 bg-white px-1 py-2 text-base focus:border-neutral-900 focus:outline-none'
 
+// "কোথা থেকে" stop-er default (stopDefaults) form-e boshai
+const applyStop = (form, from) => {
+  const { counterman, ...rest } = stopDefaults[from] ?? {}
+  const index = countermen.findIndex((c) => c.name === counterman)
+  return { ...form, from, ...rest, ...(index >= 0 && { counterman: index }) }
+}
+
 export default function App() {
-  const [form, setForm] = useState(() => ({
-    route: routes[0],
-    fare: fares[0],
-    stopNo: 1,
-    from: stops[0],
-    letter: 'U',
-    font: fonts[0],
-    to: stops[1] ?? stops[0],
-    ticketNo: 1,
-    counterman: 0,
-    dateTime: toInputValue(new Date()),
-  }))
+  const [form, setForm] = useState(() =>
+    applyStop(
+      {
+        route: routes[0],
+        fare: fares[0],
+        stopNo: 1,
+        letter: 'U',
+        font: fonts[0],
+        to: stops[1] ?? stops[0],
+        ticketNo: 1,
+        counterman: 0,
+        dateTime: toInputValue(new Date()),
+      },
+      stops[0],
+    ),
+  )
 
   const set = (key) => (e) => setForm({ ...form, [key]: e.target.value })
 
@@ -76,7 +87,11 @@ export default function App() {
           </Field>
 
           <Field label="কোথা থেকে">
-            <select className={inputClass} value={form.from} onChange={set('from')}>
+            <select
+              className={inputClass}
+              value={form.from}
+              onChange={(e) => setForm(applyStop(form, e.target.value))}
+            >
               {stops.map((s) => (
                 <option key={s}>{s}</option>
               ))}
