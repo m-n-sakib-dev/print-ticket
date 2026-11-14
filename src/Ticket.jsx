@@ -37,7 +37,7 @@ export default function Ticket({ form }) {
                 {part}
               </Fragment>
             ))}</span>
-        <span className="ml-2 [zoom:1.0.6] inline-block  scale-x-[0.8] scale-y-[1.3] text-[15px] font-medium">{valid ? formatMeridiem(when) : ''}</span>
+        <span className="ml-2 [zoom:1.06] inline-block  scale-x-[0.8] scale-y-[1.3] text-[15px] font-medium">{valid ? formatMeridiem(when) : ''}</span>
       </div>
       <div className="text-center text-[14px] [zoom:1.1] scale-x-[1.05] scale-y-[0.92] font-['Noto_Sans_Bengali'] font-extralight  leading-tight [word-spacing:4px]">কাউন্টারম্যানঃ {man.name}</div>
       <div className="text-center text-[14px] scale-x-[1.06] scale-y-[0.94] font-['Noto_Sans_Bengali'] font-extralight  leading-tight">মোবাইলঃ <span className="inline-block scale-x-[0.9] scale-y-[1.1] text-[13px] -mx-1" style={{ fontFamily: '"Inter", Arial, sans-serif' }}>{man.mobile}</span></div>
