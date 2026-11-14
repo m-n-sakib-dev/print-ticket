@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { countermen, fares, fonts, letters, routes, stopDefaults, stops } from './ticketConfig'
+import { countermen, fares, fonts, letters, routeLetters, routes, stopDefaults, stops } from './ticketConfig'
 import { toInputValue } from './bn'
 import { toParams } from './formParams'
 import Ticket from './Ticket'
@@ -20,7 +20,8 @@ const inputClass =
 const applyStop = (form, from) => {
   const { counterman, ...rest } = stopDefaults[from] ?? {}
   const index = countermen.findIndex((c) => c.name === counterman)
-  return { ...form, from, ...rest, ...(index >= 0 && { counterman: index }) }
+  const next = { ...form, from, ...rest, ...(index >= 0 && { counterman: index }) }
+  return { ...next, letter: routeLetters[next.route] ?? next.letter }
 }
 
 export default function App() {
@@ -61,7 +62,13 @@ export default function App() {
           </Field>
 
           <Field label="রুট">
-            <select className={inputClass} value={form.route} onChange={set('route')}>
+            <select
+              className={inputClass}
+              value={form.route}
+              onChange={(e) =>
+                setForm({ ...form, route: e.target.value, letter: routeLetters[e.target.value] ?? form.letter })
+              }
+            >
               {routes.map((r) => (
                 <option key={r}>{r}</option>
               ))}

@@ -1,6 +1,9 @@
 // Dropdown-er option gulo. Notun option dite array-te line jog koro.
 export const routes = ['পুলিশ / ডাউন', 'পুলিশ / আপ']
 
+// Route select korle "কোথায়"-er aager letter auto boshe (pore bodlano jay)
+export const routeLetters = { 'পুলিশ / ডাউন': 'D', 'পুলিশ / আপ': 'U' }
+
 export const fares = [ '১১০']
 
 // "from" ar "to" dropdown duto-i ei list theke ashe
