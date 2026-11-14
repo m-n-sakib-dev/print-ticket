@@ -6,7 +6,7 @@ import Ticket from './Ticket'
 const PRINT_WIDTH_MM = 50
 const PX_PER_MM = 96 / 25.4
 // Ticket-er niche extra faka jayga
-const BOTTOM_MARGIN_PX = 6
+const BOTTOM_MARGIN_PX = 16
 
 // /?print=1&... : shudhu ticket. Screen-e zoom hoye bam theke daan porjonto bhore, print-e 1 page.
 export default function PrintPage() {
