@@ -33,6 +33,8 @@ const loadTime = () => {
     return null
   }
 }
+// Second sob somoy 23 thake (mobile picker-e second set kora jay na)
+const withSec = (value) => (value ? `${value.slice(0, 16)}:23` : value)
 const saveTime = (value) => {
   try {
     localStorage.setItem(TIME_KEY, value)
@@ -53,7 +55,7 @@ export default function App() {
         to: stops[1] ?? stops[0],
         ticketNo: 1,
         counterman: 0,
-        dateTime: loadTime() || toInputValue(new Date()),
+        dateTime: withSec(loadTime() || toInputValue(new Date())),
       },
       stops[0],
     ),
@@ -61,7 +63,8 @@ export default function App() {
 
   const set = (key) => (e) => setForm({ ...form, [key]: e.target.value })
 
-  const setDateTime = (value) => {
+  const setDateTime = (raw) => {
+    const value = withSec(raw)
     saveTime(value)
     setForm({ ...form, dateTime: value })
   }
