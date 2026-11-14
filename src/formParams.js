@@ -16,5 +16,6 @@ export const fromParams = (params) => ({
   to: pick(params.get('to'), stops),
   ticketNo: params.get('ticketNo') || 1,
   counterman: Math.min(Math.max(Number(params.get('counterman')) || 0, 0), countermen.length - 1),
+  bottomMargin: Math.max(Number(params.get('bottomMargin') ?? 16) || 0, 0),
   dateTime: params.get('dateTime') || toInputValue(new Date()),
 })

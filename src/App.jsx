@@ -55,6 +55,7 @@ export default function App() {
         to: stops[1] ?? stops[0],
         ticketNo: 1,
         counterman: 0,
+        bottomMargin: 16,
         dateTime: withSec(loadTime() || toInputValue(new Date())),
       },
       stops[0],
@@ -190,6 +191,16 @@ export default function App() {
                 </option>
               ))}
             </select>
+          </Field>
+
+          <Field label="Print-er niche faka (px)">
+            <input
+              className={inputClass}
+              type="number"
+              min="0"
+              value={form.bottomMargin}
+              onChange={set('bottomMargin')}
+            />
           </Field>
 
           <button

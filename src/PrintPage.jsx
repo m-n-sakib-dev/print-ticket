@@ -5,8 +5,6 @@ import Ticket from './Ticket'
 // Print paper-er chaura. Uchchota content onujayi auto (Chrome-e @page-e "auto" height nei)
 const PRINT_WIDTH_MM = 50
 const PX_PER_MM = 96 / 25.4
-// Ticket-er niche extra faka jayga
-const BOTTOM_MARGIN_PX = 16
 
 // /?print=1&... : shudhu ticket. Screen-e zoom hoye bam theke daan porjonto bhore, print-e 1 page.
 export default function PrintPage() {
@@ -31,19 +29,19 @@ export default function PrintPage() {
     let cancelled = false
     document.fonts.ready.then(() => {
       if (cancelled) return
-      const mm = (probe.current.getBoundingClientRect().height + BOTTOM_MARGIN_PX) / PX_PER_MM
+      const mm = (probe.current.getBoundingClientRect().height + form.bottomMargin) / PX_PER_MM
       setPageHeight(Math.ceil(mm * 10) / 10 + 0.5)
     })
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [form.bottomMargin])
 
   return (
     <main className="bg-white">
       {pageHeight && <style>{`@page { size: ${PRINT_WIDTH_MM}mm ${pageHeight}mm; margin: 0 }`}</style>}
 
-      <div ref={box} className="pb-[4px] [zoom:var(--zoom)] print:[zoom:1]" style={{ '--zoom': zoom }}>
+      <div ref={box} className="[zoom:var(--zoom)] print:[zoom:1]" style={{ '--zoom': zoom, paddingBottom: `${form.bottomMargin}px` }}>
         <Ticket form={form} />
       </div>
 
