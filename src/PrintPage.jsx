@@ -29,20 +29,20 @@ export default function PrintPage() {
     let cancelled = false
     document.fonts.ready.then(() => {
       if (cancelled) return
-      const mm = (probe.current.getBoundingClientRect().height + form.bottomMargin) / PX_PER_MM
+      const mm = (probe.current.getBoundingClientRect().height) / PX_PER_MM
       setPageHeight(Math.ceil(mm * 10) / 10 + 0.5)
     })
     return () => {
       cancelled = true
     }
-  }, [form.bottomMargin])
+  }, [])
 
   return (
     <main className="bg-white">
       {pageHeight && <style>{`@page { size: ${PRINT_WIDTH_MM}mm ${pageHeight}mm; margin: 0 }`}</style>}
 
-      <div ref={box} className="[zoom:var(--zoom)] print:[zoom:1]" style={{ '--zoom': zoom, paddingBottom: `${form.bottomMargin}px` }}>
-        <Ticket form={form} />
+      <div ref={box} className="[zoom:var(--zoom)] print:[zoom:1]" style={{ '--zoom': zoom }}>
+        <Ticket form={form} bottomMargin={form.bottomMargin} />
       </div>
 
       {/* Print-er maap nene lukano copy */}
@@ -52,7 +52,7 @@ export default function PrintPage() {
         className="invisible absolute top-0 left-0 -z-10 print:hidden [&_.ticket]:w-full"
         style={{ width: `${PRINT_WIDTH_MM}mm` }}
       >
-        <Ticket form={form} />
+        <Ticket form={form} bottomMargin={form.bottomMargin} />
       </div>
     </main>
   )

@@ -2,7 +2,8 @@ import { Fragment } from 'react'
 import { countermen } from './ticketConfig'
 import { formatDate, formatMeridiem, formatTime, toBn } from './bn'
 
-export default function Ticket({ form }) {
+// bottomMargin (px): ticket-er (shadow shoho) niche extra faka. Print page-e boshe.
+export default function Ticket({ form, bottomMargin = 0 }) {
   const when = new Date(form.dateTime)
   const valid = !Number.isNaN(when.getTime())
   const man = countermen[form.counterman] ?? countermen[0]
@@ -10,7 +11,10 @@ export default function Ticket({ form }) {
   return (
     <div
       className="ticket shrink-0 shadow print:shadow-none"
-      style={{ fontFamily: `"${form.font}", "Hind Siliguri", "Noto Sans Bengali", sans-serif` }}
+      style={{
+        fontFamily: `"${form.font}", "Hind Siliguri", "Noto Sans Bengali", sans-serif`,
+        paddingBottom: bottomMargin ? `calc(2mm + ${bottomMargin}px)` : undefined,
+      }}
     >
       <div className="[zoom:0.9] ">
       <div className="origin-left [zoom:1.02] scale-x-[1.05] scale-y-[0.9] text-left text-[16px] font-medium leading-tight [word-spacing:4px]" style={{ WebkitTextStroke: '0.4px currentColor' }}>ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
