@@ -27,9 +27,9 @@ export default function Ticket({ form }) {
         <span className="inline-block origin-left scale-x-[1.1] scale-y-[0.9] font-font-normal" style={{ WebkitTextStroke: '0.4px currentColor' ,fontFamily: '"Siyam Rupali"'}}>{form.to}</span>
       </div>
       <div className="text-center text-[16px] scale-x-[1.04] [zoom:0.8] scale-y-[0.95] font-medium translate-y-[2px] leading-none [word-spacing:4px]" style={{ WebkitTextStroke: '0.3px currentColor', fontFamily: '"Siyam Rupali"'}}>টিকেট নংঃ {toBn(form.ticketNo)}</div>
-      <div className="text-center text-[14px] scale-x-[1.1]  font-medium leading-normal translate-y-[2px] [word-spacing:4px]" style={{ WebkitTextStroke: '0.4px currentColor' }}>তাংঃ {valid ? formatDate(when) : ''}</div>
+      <div className="text-center text-[14px] scale-x-[1.1]  font-medium leading-normal translate-y-[2px] [word-spacing:4px]" style={{ WebkitTextStroke: '0.3px currentColor' }}>তাংঃ {valid ? formatDate(when) : ''}</div>
       <div className="my-1 text-center text-[18px] scale-x-[1.04] scale-y-[0.90]  leading-none" style={{ WebkitTextStroke: '0.4px currentColor' }}>
-        <span style={{ fontFamily: '"Mina"' }}>সময়ঃ</span> 
+        <span style={{ fontFamily: '"Mukti"' }}>সময়ঃ</span> 
         <span className="inline-block [zoom:0.95] origin-left text-[18px] scale-x-[1] scale-y-[1.1] ml-2 " style={{ WebkitTextStroke: '0.3px currentColor' }}>{valid &&
             formatTime(when).map((part, i) => (
               <Fragment key={i}>
