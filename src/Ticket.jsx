@@ -18,7 +18,7 @@ export default function Ticket({ form, bottomMargin = 0 }) {
     >
       <div className="[zoom:0.9] ">
       <div className="origin-left [zoom:1.02] scale-x-[1.05] scale-y-[0.9] text-left text-[16px] font-medium leading-tight [word-spacing:4px]" style={{ WebkitTextStroke: '0.4px currentColor' }}>ইকবাল এন্টারপ্রাইজ (এসি বাস)</div>
-      <div className="text-center [zoom:1.1] text-[14px] scale-x-[0.9] scale-y-[1.1] font-normal leading-none [word-spacing:4px]" style={{ fontFamily: '"SolaimanLipi"' }}>Powered by C<span style={{ fontFamily: '"Noto Sans Bengali"' }}>I</span>C <span style={{ fontFamily: '"Noto Sans Bengali"' }}>G</span>roup</div>
+      <div className="text-center [zoom:1.1] text-[14px] scale-x-[0.9] scale-y-[1.1] font-normal leading-none [word-spacing:4px]" style={{ fontFamily: '"SolaimanLipi"' }}>Powered by <span className="inline-block scale-x-[0.8]">C<span style={{ fontFamily: '"Noto Sans Bengali"' }}>I</span>C</span> <span style={{ fontFamily: '"Noto Sans Bengali"' }}>G</span>roup</div>
       <div className="text-center [zoom:0.95] text-[16px] scale-x-[1.15] scale-y-[1.1] font-normal ">{form.route}</div>
       <div className="my-0 text-center text-[22px] font-normal leading-none" style={{ WebkitTextStroke: '0.3px currentColor' }}>ভাড়াঃ <span className="inline-block origin-left ml-1 scale-y-[0.85]" style={{ fontFamily: '"Charukola Ultra Light"', WebkitTextStroke: '1.5px currentColor', letterSpacing: '0.13em' }}>{toBn(form.fare)}</span></div>
       <div className="text-center font-['Noto_Sans_Bengali'] text-[14px] font-medium leading-snug [zoom:0.9]">
@@ -27,8 +27,8 @@ export default function Ticket({ form, bottomMargin = 0 }) {
         </span>
         <span className="inline-block origin-left scale-x-[1.1] scale-y-[0.9] font-normal ml-1 mr-2" style={{ WebkitTextStroke: '0.4px currentColor' ,fontFamily: '"Siyam Rupali"'}}>{form.from}</span>
         <span className="font-normal">/</span>
-        <span className="inline-block origin-bottom-left font-light scale-x-[0.8]">{form.letter}-</span>
-        <span className="inline-block origin-left scale-x-[1.1] scale-y-[0.9] font-font-normal" style={{ WebkitTextStroke: '0.4px currentColor' ,fontFamily: '"Siyam Rupali"'}}>{form.to}</span>
+        <span className="inline-block origin-bottom-left font-light scale-x-[0.6]">{form.letter}</span>
+        <span className="inline-block origin-left -translate-x-[3px] scale-x-[1.1] scale-y-[0.9] font-font-normal" style={{ WebkitTextStroke: '0.4px currentColor' ,fontFamily: '"Siyam Rupali"'}}>-{form.to}</span>
       </div>
       <div className="text-center text-[16px] scale-x-[1.04] [zoom:0.8] scale-y-[0.95] font-medium translate-y-[2px] leading-none [word-spacing:4px]" style={{ WebkitTextStroke: '0.3px currentColor', fontFamily: '"Siyam Rupali"'}}>টিকেট নংঃ {toBn(form.ticketNo)}</div>
       <div className="text-center text-[14px] scale-x-[1.1]  font-medium leading-normal translate-y-[2px] [word-spacing:4px]" style={{ WebkitTextStroke: '0.3px currentColor' }}>তাংঃ {valid ? formatDate(when) : ''}</div>
